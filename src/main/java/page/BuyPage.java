@@ -1,0 +1,40 @@
+package page;
+
+import org.openqa.selenium.By;
+
+public class BuyPage extends BasePage{
+
+    By stockedit=By.id("tzt_trade_edit_stockcode");
+    By buyamount=By.id("tzt_trade_linear_count_addcount_icon");
+    By ljmr=text("立即买入");
+    By mr=text("买入");
+    By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
+    By queding=text("确定");
+    By back=By.xpath("//android.widget.Button[@text!='立即买入']");
+
+    String message;
+
+
+    public BuyPage buyTest(String stockcode){
+
+        find(stockedit).sendKeys(stockcode);
+        find(buyamount).click();
+        find(ljmr).click();
+        find(mr).click();
+        message=find(msg).getText();
+        find(queding).click();
+
+        return this;
+    }
+
+    public String getMessage(){
+        return message;
+    }
+
+    public TradePage gotoTrade(){
+
+        waituntil(back);
+        find(back).click();
+        return new TradePage();
+    }
+}

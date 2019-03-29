@@ -1,0 +1,71 @@
+---
+xueqiu:
+  username: 13823342796
+  password: 123456
+  stock: pdd
+  input:
+    - sz000001
+    - sh601318
+  expect:
+    - 平安银行
+    - 中国平安
+appium:
+  app: ""
+  url: http://127.0.0.1:4723/wd/hub
+  wait: 10
+  capabilities:
+    platformName: android
+    deviceName: dddd
+    appPackage: com.ytsc
+    appActivity: com.zztzt.android.simple.activity.tztCommHeadPageActivity
+    autoGrantPermissions: true
+    noReset: true
+    automationName: UiAutomator2
+zyb:
+  username: 1100004676
+  userb: 1100001397
+  useryzzz: 1100004298
+  userggt: 1300022253
+  usergz: 1100010400
+  userkfsjj: 1100010936
+  userhbjj: 1200112422
+  usercnjj: 1310007300
+  password: 123321
+  stock:
+    - 000001
+    - 600000
+    - 200058
+    - 900941
+    - 200017
+    - 900953
+    - 00001
+    - 01359
+    - 01448
+    - 430074
+    - 430005
+    - 000562
+    - 000561
+    - 519888
+    - 501001
+    - 150169
+  stksale:
+    - 000882
+    - 600016
+    - 831529
+    - 202016
+    - 202015
+  expect:
+    - 成功
+    - 成功
+    - 委托已提交
+    - 转账请求已提交
+    - 请求发送成功
+    - 请求已提交
+    - 暂无可选议案编号
+    - 无可选行为代码
+    - 查无数据
+    - 已提交
+    - 无定投委托
+  stkamt: 200
+  amthbjj: 150000
+  amtcnjj: 2000
