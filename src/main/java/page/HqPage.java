@@ -11,7 +11,7 @@ public class HqPage extends BasePage{
     By addzixuan=By.xpath("//android.widget.ImageView[@instance=1]");
     By stocknames=By.id("tztStockCodeName");
 
-    public SearchPage addZixuan(){
+    public SearchPage addZixuan() throws InterruptedException {
         find(addzixuan).click();
         return new SearchPage();
     }

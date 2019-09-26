@@ -15,7 +15,7 @@ public class ZjzcPage extends BasePage {
     String message;
 
 
-    public ZjzcPage zqtoYh(){
+    public ZjzcPage zqtoYh() throws InterruptedException {
 
         find(zzje).sendKeys("222");
         find(yhmm).sendKeys("123321");
@@ -31,7 +31,7 @@ public class ZjzcPage extends BasePage {
         return message;
     }
 
-    public YzzzPage gotoYzzz(){
+    public YzzzPage gotoYzzz() throws InterruptedException {
 
         find(back).click();
 

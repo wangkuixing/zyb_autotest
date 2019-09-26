@@ -1,6 +1,8 @@
 import driver.GlobalConfig;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -16,7 +18,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class SearchTest {
 
     static MainPage mainPage;
@@ -24,7 +25,7 @@ public class SearchTest {
     static HqPage hqPage;
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         mainPage=MainPage.start();
         hqPage =mainPage.gotoHq();
     }
@@ -51,7 +52,7 @@ public class SearchTest {
 
     //配置驱动：将yaml文件实例化对象
     @Test
-    void select1(){
+    void select1() throws InterruptedException {
         GlobalConfig config= GlobalConfig.load("/data/globalConfig.yaml");
         String keyword=config.zyb.stock.get(0);
         System.out.printf(keyword);

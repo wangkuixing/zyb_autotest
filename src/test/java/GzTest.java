@@ -1,6 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,6 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.stream.Stream;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class GzTest {
 
     static MainPage mainPage;
@@ -27,7 +27,7 @@ public class GzTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.usergz;
         String password=config.zyb.password;
 
@@ -39,9 +39,10 @@ public class GzTest {
     }
 
     //股转限价买入430074,430005
+    @Order(1)
     @ParameterizedTest
     @MethodSource("getyamlBuygz")
-    void buyGz(String stkcode, String expect){
+    void buyGz(String stkcode, String expect) throws InterruptedException {
 
         xjmrPage=tradePage.gotoGz().gotoXjmr();
         xjmrPage.buyGz(stkcode);
@@ -54,7 +55,8 @@ public class GzTest {
 
     //股转限价卖出831529
     @Test
-    void saleGz(){
+    @Order(2)
+    void saleGz() throws InterruptedException {
 
         String stkcode=config.zyb.stksale.get(2);
         String expect=config.zyb.expect.get(2);
@@ -69,7 +71,8 @@ public class GzTest {
 
     //股转撤单
     @Test
-    void gzChedan(){
+    @Order(3)
+    void gzChedan() throws InterruptedException {
         String expect1=config.zyb.expect.get(0);
         String expect2=config.zyb.expect.get(8);
 

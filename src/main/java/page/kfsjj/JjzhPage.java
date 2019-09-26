@@ -16,7 +16,7 @@ public class JjzhPage extends BasePage {
 
     String message;
 
-    public JjzhPage jjZh(String stkcode, String amount){
+    public JjzhPage jjZh(String stkcode, String amount) throws InterruptedException {
 
         find(zcjj).click();
         find(select).click();
@@ -35,7 +35,7 @@ public class JjzhPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

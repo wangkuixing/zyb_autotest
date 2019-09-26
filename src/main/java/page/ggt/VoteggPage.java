@@ -23,7 +23,7 @@ public class VoteggPage extends BasePage {
     String message1;
     String message2;
 
-    public VoteggPage voteHgt(){
+    public VoteggPage voteHgt() throws InterruptedException {
 
         find(hgt).click();
         //显式等待议案编号
@@ -45,7 +45,7 @@ public class VoteggPage extends BasePage {
         return this;
     }
 
-    public VoteggPage voteSgt(){
+    public VoteggPage voteSgt() throws InterruptedException {
 
         find(sgt).click();
         //显式等待议案编号
@@ -75,7 +75,7 @@ public class VoteggPage extends BasePage {
         return message2;
     }
 
-    public GgtPage gotoGgt(){
+    public GgtPage gotoGgt() throws InterruptedException {
         find(back).click();
         return new GgtPage();
     }

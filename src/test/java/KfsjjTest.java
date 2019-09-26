@@ -1,6 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
 import page.MainPage;
@@ -10,6 +9,7 @@ import page.kfsjj.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class KfsjjTest {
 
     static MainPage mainPage;
@@ -29,7 +29,7 @@ public class KfsjjTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.userkfsjj;
         String password=config.zyb.password;
 
@@ -43,7 +43,8 @@ public class KfsjjTest {
 
     //基金申购000562
     @Test
-    void jjSg(){
+    @Order(1)
+    void jjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(11);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);
@@ -58,7 +59,8 @@ public class KfsjjTest {
 
     //基金赎回200016
     @Test
-    void jjSh(){
+    @Order(2)
+    void jjSh() throws InterruptedException {
 
         String stkcode=config.zyb.stksale.get(3);
         String amount=config.zyb.stkamt;
@@ -74,7 +76,8 @@ public class KfsjjTest {
 
     //基金认购000561
     @Test
-    void jjRg(){
+    @Order(3)
+    void jjRg() throws InterruptedException {
 
         String stkcode=config.zyb.stock.get(12);
         String amount=config.zyb.stkamt;
@@ -90,7 +93,8 @@ public class KfsjjTest {
 
     //基金撤单 撤第一笔单，无委托返回查无数据
     @Test
-    void jjCd(){
+    @Order(4)
+    void jjCd() throws InterruptedException {
 
         String expect=config.zyb.expect.get(0);
 
@@ -104,7 +108,8 @@ public class KfsjjTest {
 
     //基金分红设置：000562现金
     @Test
-    void fhSz(){
+    @Order(5)
+    void fhSz() throws InterruptedException {
 
         String expect=config.zyb.expect.get(9);
 
@@ -118,7 +123,8 @@ public class KfsjjTest {
 
     //基金转换200015-000562
     @Test
-    void jjZh(){
+    @Order(6)
+    void jjZh() throws InterruptedException {
 
         String stkcode=config.zyb.stock.get(11);
         String amount=config.zyb.stkamt;
@@ -134,7 +140,8 @@ public class KfsjjTest {
 
     //基金定投000562
     @Test
-    void jjDt(){
+    @Order(7)
+    void jjDt() throws InterruptedException {
 
         String stkcode=config.zyb.stock.get(11);
         String amount=config.zyb.stkamt;
@@ -150,7 +157,8 @@ public class KfsjjTest {
 
     //基金定投取消000562
     @Test
-    void jjDtqx(){
+    @Order(8)
+    void jjDtqx() throws InterruptedException {
 
         String expect1=config.zyb.expect.get(9);
         String expect2=config.zyb.expect.get(10);

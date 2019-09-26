@@ -16,7 +16,7 @@ public class JjdtPage extends BasePage {
 
     String message;
 
-    public JjdtPage jjDt(String stkcode, String amount){
+    public JjdtPage jjDt(String stkcode, String amount) throws InterruptedException {
 
         find(jjdm).sendKeys(stkcode);
         find(dtje).sendKeys(amount);
@@ -32,7 +32,7 @@ public class JjdtPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

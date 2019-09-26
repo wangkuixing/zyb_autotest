@@ -2,13 +2,15 @@ package page;
 
 import driver.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    public static WebElement find(By locator) {
+    public static WebElement find(By locator) throws InterruptedException {
+        Thread.sleep(3000);
         try {
             return Driver.getCurrentDriver().findElement(locator);
         }catch(Exception e){
@@ -32,6 +34,15 @@ public class BasePage {
 
     public static WebElement content_desc(String desc){
         return Driver.getCurrentDriver().findElementByAccessibilityId(desc);
+    }
+
+    public Boolean isElementExist(By locator){
+        try{
+            Driver.getCurrentDriver().findElement(locator);
+            return true;
+        } catch (NoSuchElementException e){
+            return false;
+        }
     }
 
     //封装显式等待

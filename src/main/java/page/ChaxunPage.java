@@ -5,7 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 public class ChaxunPage extends BasePage{
 
-    public Boolean chaxunTest(){
+    public Boolean chaxunTest() throws InterruptedException {
 
         try{
            find(text("人民币"));
@@ -18,7 +18,7 @@ public class ChaxunPage extends BasePage{
 
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
         By back=By.className("android.widget.ImageView");
 
         find(back).click();

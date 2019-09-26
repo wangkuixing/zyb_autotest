@@ -1,9 +1,13 @@
 import driver.GlobalConfig;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,6 +22,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.stream.Stream;
 
+@TestMethodOrder(OrderAnnotation.class)
 public class ATest {
 
     static MainPage mainPage;
@@ -38,7 +43,7 @@ public class ATest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.username;
         String password=config.zyb.password;
 
@@ -50,9 +55,10 @@ public class ATest {
     }
 
     //买入A股000001,600000
+    @Order(1)
     @ParameterizedTest
     @MethodSource("Getyamlbuy")
-    void buyA(String stockcode, String expect){
+    void buyA(String stockcode, String expect) throws InterruptedException {
 
         buyPage=tradePage.gotoBuy();
         buyPage.buyTest(stockcode);
@@ -63,9 +69,10 @@ public class ATest {
     }
 
     //卖出A股
+    @Order(2)
     @ParameterizedTest
     @MethodSource("Getyamlsale")
-    void saleA(String stksale, String expect){
+    void saleA(String stksale, String expect) throws InterruptedException {
 
         String stkamt=config.zyb.stkamt;
 
@@ -78,7 +85,8 @@ public class ATest {
     }
 
     @Test
-    void chaZijin(){
+    @Order(3)
+    void chaZijin() throws InterruptedException {
 
         chaxunPage=tradePage.gotoChaxun();
         Boolean cha=chaxunPage.chaxunTest();
@@ -88,7 +96,8 @@ public class ATest {
     }
 
     @Test
-    void chiCang(){
+    @Order(4)
+    void chiCang() throws InterruptedException {
 
         chicangPage=tradePage.gotoChicang();
         Boolean chicang=chicangPage.chicangTest();
@@ -99,7 +108,8 @@ public class ATest {
 
     //拆单买入A股000001
     @Test
-    void cdbuyA(){
+    @Order(5)
+    void cdbuyA() throws InterruptedException {
 
         String stockcode=config.zyb.stock.get(0);
         String expect=config.zyb.expect.get(2);
@@ -119,6 +129,7 @@ public class ATest {
 
     //拆单卖出A股000882
     @Test
+    @Order(6)
     void cdsaleA(){
         //todo
         return;
@@ -130,7 +141,8 @@ public class ATest {
 
     //新股申购
     @Test
-    void xinguTest(){
+    @Order(7)
+    void xinguTest() throws InterruptedException {
 
         tradePage.gotoYjdx()
                 .gotoXgsg()
@@ -142,7 +154,8 @@ public class ATest {
 
     //债券申购
     @Test
-    void xinzhaiTest(){
+    @Order(8)
+    void xinzhaiTest() throws InterruptedException {
 
         tradePage.gotoYjdx()
                 .gotoXinzhai()
@@ -154,7 +167,8 @@ public class ATest {
 
     //深市国债逆回购
     @Test
-    void sznhgTest(){
+    @Order(9)
+    void sznhgTest() throws InterruptedException {
 
         sznhgPage=tradePage.gotoNhg().gotoSz();
         sznhgPage.weituo1318xx();
@@ -169,7 +183,8 @@ public class ATest {
 
     //沪市国债逆回购
     @Test
-    void shnhgTest(){
+    @Order(10)
+    void shnhgTest() throws InterruptedException {
 
         shnhgPage=tradePage.gotoNhg().gotoSh();
         shnhgPage.weituo204xxx();

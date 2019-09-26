@@ -16,7 +16,7 @@ public class JjdtqxPage extends BasePage {
 
     String message;
 
-    public JjdtqxPage jjDtqx(){
+    public JjdtqxPage jjDtqx() throws InterruptedException {
 
         find(jjdm).click();
         if (find(id).getText().contains("000562")){
@@ -38,7 +38,7 @@ public class JjdtqxPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

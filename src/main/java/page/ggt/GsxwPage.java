@@ -22,7 +22,7 @@ public class GsxwPage extends BasePage {
     String message1;
     String message2;
 
-    public GsxwPage gsxwHgt(){
+    public GsxwPage gsxwHgt() throws InterruptedException {
 
         find(hgt).click();
         //显式等待行为代码
@@ -45,7 +45,7 @@ public class GsxwPage extends BasePage {
     }
 
 
-    public GsxwPage gsxwSgt(){
+    public GsxwPage gsxwSgt() throws InterruptedException {
 
         find(sgt).click();
         //显式等待行为代码
@@ -75,7 +75,7 @@ public class GsxwPage extends BasePage {
         return message2;
     }
 
-    public GgtPage gotoGgt(){
+    public GgtPage gotoGgt() throws InterruptedException {
         find(back).click();
         return new GgtPage();
     }

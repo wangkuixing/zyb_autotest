@@ -1,5 +1,6 @@
 package page;
 
+import driver.Driver;
 import org.openqa.selenium.By;
 
 public class BuyPage extends BasePage{
@@ -11,13 +12,16 @@ public class BuyPage extends BasePage{
     By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
     By queding=text("确定");
     By back=By.xpath("//android.widget.Button[@text!='立即买入']");
+//    By back=By.xpath("//android.widget.Button");
 
     String message;
 
 
-    public BuyPage buyTest(String stockcode){
+    public BuyPage buyTest(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
+        //等待10s取股东号，证券信息
+        Thread.sleep(10000);
         find(buyamount).click();
         find(ljmr).click();
         find(mr).click();
@@ -31,10 +35,16 @@ public class BuyPage extends BasePage{
         return message;
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         waituntil(back);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         find(back).click();
+//        Driver.getCurrentDriver().findElements(back).get(0).click();
         return new TradePage();
     }
 }

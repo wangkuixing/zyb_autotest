@@ -17,7 +17,7 @@ public class JjrgPage extends BasePage {
 
     String message;
 
-    public JjrgPage jjRg(String stockcode, String amount){
+    public JjrgPage jjRg(String stockcode, String amount) throws InterruptedException {
 
         find(jjdm).sendKeys(stockcode);
         find(rgje).sendKeys(amount);
@@ -36,7 +36,7 @@ public class JjrgPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

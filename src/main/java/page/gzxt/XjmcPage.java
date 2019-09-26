@@ -16,7 +16,7 @@ public class XjmcPage extends BasePage {
 
     String message;
 
-    public XjmcPage saleGz(String stockcode){
+    public XjmcPage saleGz(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(buyamount).click();
@@ -32,7 +32,7 @@ public class XjmcPage extends BasePage {
         return message;
     }
 
-    public GzPage gotoGz(){
+    public GzPage gotoGz() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

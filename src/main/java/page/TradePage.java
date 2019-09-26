@@ -18,7 +18,7 @@ import java.time.Duration;
 
 public class TradePage extends BasePage {
 
-    public  LoginPage gotoLogin(){
+    public  LoginPage gotoLogin() throws InterruptedException {
 
         By mr=text("买入");
 
@@ -29,92 +29,92 @@ public class TradePage extends BasePage {
         return new LoginPage();
     }
 
-    public  BuyPage gotoBuy(){
+    public  BuyPage gotoBuy() throws InterruptedException {
 
         find(text("买入")).click();
         return new BuyPage();
     }
 
-    public  SalePage gotoSale(){
+    public  SalePage gotoSale() throws InterruptedException {
 
         find(text("卖出")).click();
         return new SalePage();
     }
 
-    public ChedanPage gotoChedan(){
+    public ChedanPage gotoChedan() throws InterruptedException {
 
         find(text("撤单")).click();
         return new ChedanPage();
     }
 
-    public ChaxunPage gotoChaxun(){
+    public ChaxunPage gotoChaxun() throws InterruptedException {
 
         find(text("查询资金")).click();
         return new ChaxunPage();
     }
 
-    public ChicangPage gotoChicang(){
+    public ChicangPage gotoChicang() throws InterruptedException {
 
         find(text("我的持仓")).click();
         return new ChicangPage();
     }
 
-    public MorePage gotoMore(){
+    public MorePage gotoMore() throws InterruptedException {
 
         find(text("更多")).click();
         return new MorePage();
     }
 
-    public YjdxPage gotoYjdx(){
+    public YjdxPage gotoYjdx() throws InterruptedException {
 
         find(text("一键打新")).click();
         return new YjdxPage();
     }
 
-    public NhgPage gotoNhg(){
+    public NhgPage gotoNhg() throws InterruptedException {
 
         find(text("国债逆回购")).click();
         return new NhgPage();
     }
 
-    public YzzzPage gotoYzzz(){
+    public YzzzPage gotoYzzz() throws InterruptedException {
 
         find(By.xpath("//android.view.View[@text='银证转账']")).click();
         return new YzzzPage();
     }
 
-    public GgtPage gotoGgt(){
+    public GgtPage gotoGgt() throws InterruptedException {
 
         find(By.xpath("//android.view.View[@text='港股通交易']")).click();
         return new GgtPage();
     }
 
-    public GzPage gotoGz(){
+    public GzPage gotoGz() throws InterruptedException {
 
         find(By.xpath("//android.view.View[@text='股转业务']")).click();
         return new GzPage();
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         find(By.xpath("//android.view.View[@text='开放式基金']")).click();
         return new KfsjjPage();
     }
 
-    public HbjjPage gotoHbjj(){
+    public HbjjPage gotoHbjj() throws InterruptedException {
 
         find(By.xpath("//android.view.View[@text='实时货币基金']")).click();
         return new HbjjPage();
     }
 
-    public CnjjPage gotoCnjj(){
+    public CnjjPage gotoCnjj() throws InterruptedException {
 
         swipeControl();
         find(By.xpath("//android.view.View[@text='场内基金']")).click();
         return new CnjjPage();
     }
 
-    public TradePage logOut(String name){
+    public TradePage logOut(String name) throws InterruptedException {
 
         find(text(name)).click();
         find(text("确定")).click();

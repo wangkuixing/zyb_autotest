@@ -21,7 +21,7 @@ public class SaleggtPage extends BasePage {
 
     String message;
 
-    public SaleggtPage saleHgt(String stockcode){
+    public SaleggtPage saleHgt(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(hgtacct).click();
@@ -37,7 +37,7 @@ public class SaleggtPage extends BasePage {
         return new SaleggtPage();
     }
 
-    public SaleggtPage saleSgt(String stockcode){
+    public SaleggtPage saleSgt(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(this.stockamount).click();
@@ -57,7 +57,7 @@ public class SaleggtPage extends BasePage {
         return message;
     }
 
-    public GgtPage gotoGgt(){
+    public GgtPage gotoGgt() throws InterruptedException {
 
         find(back).click();
 

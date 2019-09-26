@@ -15,7 +15,7 @@ public class GgchedanPage extends BasePage {
 
     String message;
 
-    public GgchedanPage chedan(){
+    public GgchedanPage chedan() throws InterruptedException {
 
         //todo: 改造新增无委托情况的判断
         ArrayList<WebElement> array=new ArrayList<>();
@@ -35,7 +35,7 @@ public class GgchedanPage extends BasePage {
         return message;
     }
 
-    public GgtPage gotoGgt(){
+    public GgtPage gotoGgt() throws InterruptedException {
 
         find(back).click();
 

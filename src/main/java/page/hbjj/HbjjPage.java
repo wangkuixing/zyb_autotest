@@ -8,12 +8,12 @@ public class HbjjPage extends BasePage {
     By jjsg=text("基金申购");
     By jjsh=text("基金赎回");
 
-    public HbjjsgPage gotoSg(){
+    public HbjjsgPage gotoSg() throws InterruptedException {
         find(jjsg).click();
         return new HbjjsgPage();
     }
 
-    public HbjjshPage gotoSh(){
+    public HbjjshPage gotoSh() throws InterruptedException {
         find(jjsh).click();
         return new HbjjshPage();
     }

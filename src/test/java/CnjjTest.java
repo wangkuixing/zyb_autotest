@@ -1,6 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
 import page.MainPage;
@@ -13,6 +12,7 @@ import page.cnjj.CnjjshPage;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CnjjTest {
 
     static MainPage mainPage;
@@ -27,7 +27,7 @@ public class CnjjTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.usercnjj;
         String password=config.zyb.password;
 
@@ -41,7 +41,8 @@ public class CnjjTest {
 
     //场内基金认购
     @Test
-    void cnjjRg(){
+    @Order(1)
+    void cnjjRg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(14);
         String amount=config.zyb.amtcnjj;
         String expect=config.zyb.expect.get(9);
@@ -56,7 +57,8 @@ public class CnjjTest {
 
     //场内基金申购501001
     @Test
-    void cnjjSg(){
+    @Order(2)
+    void cnjjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(14);
         String amount=config.zyb.amtcnjj;
         String expect=config.zyb.expect.get(9);
@@ -71,7 +73,8 @@ public class CnjjTest {
 
     //场内基金赎回150169
     @Test
-    void cnjjSh(){
+    @Order(3)
+    void cnjjSh() throws InterruptedException {
         String stkcode=config.zyb.stock.get(15);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);

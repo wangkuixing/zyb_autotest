@@ -16,7 +16,7 @@ public class ShnhgPage extends BasePage {
     String message1;
     String message2;
 
-    public ShnhgPage weituo204xxx(){
+    public ShnhgPage weituo204xxx() throws InterruptedException {
         find(amount).click();
         find(ljmc).click();
         find(mc).click();
@@ -43,7 +43,7 @@ public class ShnhgPage extends BasePage {
         return message2;
     }
 
-    public NhgPage gotoNhg(){
+    public NhgPage gotoNhg() throws InterruptedException {
 
         find(back).click();
         return new NhgPage();

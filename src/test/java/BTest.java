@@ -1,5 +1,8 @@
 import driver.GlobalConfig;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,6 +13,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.stream.Stream;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BTest {
 
     static MainPage mainPage;
@@ -21,7 +25,7 @@ public class BTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.userb;
         String password=config.zyb.password;
 
@@ -34,9 +38,10 @@ public class BTest {
 
 
     //买入B股
+    @Order(1)
     @ParameterizedTest
     @MethodSource("GetyamlbuyB")
-    void BuyB(String stockcode, String expect){
+    void BuyB(String stockcode, String expect) throws InterruptedException {
 
 
         buyPage=tradePage.gotoBuy();
@@ -49,9 +54,10 @@ public class BTest {
     }
 
     //卖出B股
+    @Order(2)
     @ParameterizedTest
     @MethodSource("GetyamlsaleB")
-    void SaleB(String stksaleB, String expect){
+    void SaleB(String stksaleB, String expect) throws InterruptedException {
 
         String stkamt=config.zyb.stkamt;
 

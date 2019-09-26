@@ -8,7 +8,7 @@ public class WdzjPage extends BasePage {
 
     By back=By.className("android.widget.ImageView");
 
-    public Boolean wdZj(){
+    public Boolean wdZj() throws InterruptedException {
 
         try{
             find(text("人民币"));
@@ -20,7 +20,7 @@ public class WdzjPage extends BasePage {
         }
     }
 
-    public YzzzPage gotoYzzz(){
+    public YzzzPage gotoYzzz() throws InterruptedException {
 
         find(back).click();
         return new YzzzPage();

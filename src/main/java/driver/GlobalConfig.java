@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class GlobalConfig {
     public AppiumConfig appium;
-    public XueqiuConfig xueqiu;
     public ZybConfig zyb;
 
     public static GlobalConfig load(String path){

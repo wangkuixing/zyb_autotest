@@ -17,7 +17,7 @@ public class XjmrPage extends BasePage {
     String message;
 
 
-    public XjmrPage buyGz(String stockcode){
+    public XjmrPage buyGz(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(buyamount).click();
@@ -34,7 +34,7 @@ public class XjmrPage extends BasePage {
         return message;
     }
 
-    public GzPage gotoGz(){
+    public GzPage gotoGz() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

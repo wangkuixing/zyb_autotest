@@ -1,6 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
 import page.MainPage;
@@ -12,7 +11,7 @@ import page.hbjj.HbjjshPage;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class HbjjTest {
 
     static MainPage mainPage;
@@ -26,7 +25,7 @@ public class HbjjTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.userhbjj;
         String password=config.zyb.password;
 
@@ -40,7 +39,8 @@ public class HbjjTest {
 
     //货币基金申购
     @Test
-    void hbjjSg(){
+    @Order(1)
+    void hbjjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(13);
         String amount=config.zyb.amthbjj;
         String expect=config.zyb.expect.get(9);
@@ -54,7 +54,8 @@ public class HbjjTest {
     }
 
     @Test
-    void hbjjSh(){
+    @Order(2)
+    void hbjjSh() throws InterruptedException {
         String stkcode=config.zyb.stock.get(13);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);

@@ -1,14 +1,4 @@
 ---
-xueqiu:
-  username: 13823342796
-  password: 123456
-  stock: pdd
-  input:
-    - sz000001
-    - sh601318
-  expect:
-    - 平安银行
-    - 中国平安
 appium:
   app: ""
   url: http://127.0.0.1:4723/wd/hub

@@ -17,7 +17,7 @@ public class JjcdPage extends BasePage {
 
     String message;
 
-    public JjcdPage jjCd() {
+    public JjcdPage jjCd() throws InterruptedException  {
 
         if (find(none).getText().contains(cwsj)){
             message=cwsj;
@@ -40,7 +40,7 @@ public class JjcdPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

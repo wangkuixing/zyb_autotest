@@ -15,10 +15,12 @@ public class SalePage extends BasePage{
 
     String message;
 
-    public SalePage SaleTest(String stockcode, String stockamount){
+    public SalePage SaleTest(String stockcode, String stockamount) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         //find(this.stockamount).sendKeys(stockamount);
+        //等待10s取股东号，证券信息
+        Thread.sleep(10000);
         find(this.stockamount).click();
         find(ljmc).click();
         find(mc).click();
@@ -32,7 +34,7 @@ public class SalePage extends BasePage{
         return message;
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         find(back).click();
 

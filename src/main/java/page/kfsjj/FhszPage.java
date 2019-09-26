@@ -16,7 +16,7 @@ public class FhszPage extends BasePage {
 
     String message;
 
-    public FhszPage jjFh(){
+    public FhszPage jjFh() throws InterruptedException {
 
         find(jjmc).click();
         find(select).click();
@@ -34,7 +34,7 @@ public class FhszPage extends BasePage {
         return message;
     }
 
-    public KfsjjPage gotoKfsjj(){
+    public KfsjjPage gotoKfsjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

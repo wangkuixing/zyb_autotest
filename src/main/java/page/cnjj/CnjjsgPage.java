@@ -14,7 +14,7 @@ public class CnjjsgPage extends BasePage {
 
     String message;
 
-    public CnjjsgPage jjSg(String stockcode, String amount){
+    public CnjjsgPage jjSg(String stockcode, String amount) throws InterruptedException {
 
         find(jjdm).sendKeys(stockcode);
         find(sgfe).sendKeys(amount);
@@ -31,7 +31,7 @@ public class CnjjsgPage extends BasePage {
         return message;
     }
 
-    public CnjjPage gotoCnjj(){
+    public CnjjPage gotoCnjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

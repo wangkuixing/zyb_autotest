@@ -1,6 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
 import page.MainPage;
@@ -10,6 +9,7 @@ import page.ggt.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class GgtTest {
 
     static MainPage mainPage;
@@ -25,7 +25,7 @@ public class GgtTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.userggt;
         String password=config.zyb.password;
 
@@ -38,7 +38,8 @@ public class GgtTest {
 
     //港股通买入 -00001
     @Test
-    void ggtBuy(){
+    @Order(1)
+    void ggtBuy() throws InterruptedException {
         String stkcode=config.zyb.stock.get(6);
         String expect=config.zyb.expect.get(2);
 
@@ -57,7 +58,8 @@ public class GgtTest {
 
     //港股通卖出 - sh:01359 sz:01448
     @Test
-    void ggtSale(){
+    @Order(2)
+    void ggtSale() throws InterruptedException {
 
         String stkcodesh=config.zyb.stock.get(7);
         String stkcodesz=config.zyb.stock.get(8);
@@ -77,7 +79,8 @@ public class GgtTest {
 
     //港股撤单,撤第一笔单
     @Test
-    void ggtChedan(){
+    @Order(3)
+    void ggtChedan() throws InterruptedException {
 
         String expect=config.zyb.expect.get(2);
 
@@ -91,7 +94,8 @@ public class GgtTest {
 
     //港股投票
     @Test
-    void ggtVote(){
+    @Order(4)
+    void ggtVote() throws InterruptedException {
 
         String expect1=config.zyb.expect.get(5);
         String expect2=config.zyb.expect.get(6);
@@ -111,7 +115,8 @@ public class GgtTest {
 
     //港股公司行为
     @Test
-    void ggtGsxw(){
+    @Order(5)
+    void ggtGsxw() throws InterruptedException {
 
         String expect1=config.zyb.expect.get(5);
         String expect2=config.zyb.expect.get(7);

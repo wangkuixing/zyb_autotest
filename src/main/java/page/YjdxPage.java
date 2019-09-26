@@ -9,14 +9,14 @@ import page.xingu.XinzhaiPage;
 
 public class YjdxPage extends BasePage{
 
-    public XinguPage gotoXgsg(){
+    public XinguPage gotoXgsg() throws InterruptedException {
 
         find(text("新股申购")).click();
 
         return new XinguPage();
     }
 
-    public XinzhaiPage gotoXinzhai(){
+    public XinzhaiPage gotoXinzhai() throws InterruptedException {
 
 
 
@@ -29,7 +29,7 @@ public class YjdxPage extends BasePage{
         return new XinzhaiPage();
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         By back=By.className("android.widget.ImageView");
 

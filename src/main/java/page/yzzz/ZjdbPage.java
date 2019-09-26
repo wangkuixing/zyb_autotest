@@ -16,7 +16,7 @@ public class ZjdbPage extends BasePage {
 
     String message;
 
-    public ZjdbPage zjDb(){
+    public ZjdbPage zjDb() throws InterruptedException {
 
         find(zrzh).click();
         find(mscg).click();
@@ -33,7 +33,7 @@ public class ZjdbPage extends BasePage {
         return message;
     }
 
-    public YzzzPage gotoYzzz(){
+    public YzzzPage gotoYzzz() throws InterruptedException {
         find(back).click();
         return new YzzzPage();
     }

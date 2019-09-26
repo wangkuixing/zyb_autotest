@@ -24,7 +24,7 @@ public class LoginPage extends BasePage{
 //        return this;
 //    }
 
-    public BuyPage passwordSuccess(String username, String password){
+    public BuyPage passwordSuccess(String username, String password) throws InterruptedException {
 
         find(this.username).sendKeys(username);
         find(this.password).sendKeys(password);

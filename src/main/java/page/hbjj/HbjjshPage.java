@@ -15,7 +15,7 @@ public class HbjjshPage extends BasePage {
     String message;
 
 
-    public HbjjshPage jjSh(String stockcode, String amount){
+    public HbjjshPage jjSh(String stockcode, String amount) throws InterruptedException {
 
         find(jjdm).sendKeys(stockcode);
         find(shfe).sendKeys(amount);
@@ -32,7 +32,7 @@ public class HbjjshPage extends BasePage {
         return message;
     }
 
-    public HbjjPage gotoHbjj(){
+    public HbjjPage gotoHbjj() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

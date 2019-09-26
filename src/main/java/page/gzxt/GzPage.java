@@ -11,25 +11,25 @@ public class GzPage extends BasePage {
     By gzcd=text("股转撤单");
     By back=By.className("android.widget.ImageView");
 
-    public XjmrPage gotoXjmr(){
+    public XjmrPage gotoXjmr() throws InterruptedException {
 
         find(xjmr).click();
         return new XjmrPage();
     }
 
-    public XjmcPage gotoXjmc(){
+    public XjmcPage gotoXjmc() throws InterruptedException {
 
         find(xjmc).click();
         return new XjmcPage();
     }
 
-    public GzcdPage gotoGzcd(){
+    public GzcdPage gotoGzcd() throws InterruptedException {
 
         find(gzcd).click();
         return new GzcdPage();
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         find(back).click();
         return new TradePage();

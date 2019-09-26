@@ -20,7 +20,7 @@ public class CdbuyPage extends BasePage{
     String message2;
 
     //均分拆单
-    public CdbuyPage jfTest(String stockcode){
+    public CdbuyPage jfTest(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(buyamount).sendKeys("3700");
@@ -34,7 +34,7 @@ public class CdbuyPage extends BasePage{
     }
 
     //随机拆单
-    public CdbuyPage randomTest(String stockcode){
+    public CdbuyPage randomTest(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
         find(buyamount).sendKeys("20200");
@@ -57,7 +57,7 @@ public class CdbuyPage extends BasePage{
         return message2;
     }
 
-    public MorePage gotoMore(){
+    public MorePage gotoMore() throws InterruptedException {
         find(back).click();
         return new MorePage();
     }

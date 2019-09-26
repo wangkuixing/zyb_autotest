@@ -14,43 +14,43 @@ public class YzzzPage extends BasePage {
     By zjdb=text("资金调拨");
     By back=By.className("android.widget.ImageView");
 
-    public ZjzrPage gotoZjzr(){
+    public ZjzrPage gotoZjzr() throws InterruptedException {
 
         find(zjzr).click();
         return new ZjzrPage();
     }
 
-    public ZjzcPage gotoZjzc(){
+    public ZjzcPage gotoZjzc() throws InterruptedException {
 
         find(zjzc).click();
         return new ZjzcPage();
     }
 
-    public WdzjPage gotoWdzj(){
+    public WdzjPage gotoWdzj() throws InterruptedException {
 
         find(wdzj).click();
         return new WdzjPage();
     }
 
-    public YhyePage gotoYhye(){
+    public YhyePage gotoYhye() throws InterruptedException {
 
         find(yhye).click();
         return new YhyePage();
     }
 
-    public ZjgjPage gotoZjgj(){
+    public ZjgjPage gotoZjgj() throws InterruptedException {
 
         find(zjgj).click();
         return new ZjgjPage();
     }
 
-    public ZjdbPage gotoZjdb(){
+    public ZjdbPage gotoZjdb() throws InterruptedException {
 
         find(zjdb).click();
         return new ZjdbPage();
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         find(back).click();
         return new TradePage();

@@ -5,7 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 public class ChicangPage extends BasePage{
 
-    public Boolean chicangTest(){
+    public Boolean chicangTest() throws InterruptedException {
 
         try {
             find(text("总资产"));
@@ -18,7 +18,7 @@ public class ChicangPage extends BasePage{
         }
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         By back=By.className("android.widget.ImageView");
 

@@ -1,7 +1,8 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import page.BuyPage;
 import page.LoginPage;
 import page.MainPage;
@@ -11,6 +12,7 @@ import page.yzzz.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class YzzzTest {
 
     static MainPage mainPage;
@@ -26,7 +28,7 @@ public class YzzzTest {
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
-    static void beforeALL(){
+    static void beforeALL() throws InterruptedException {
         String username=config.zyb.useryzzz;
         String password=config.zyb.password;
 
@@ -39,7 +41,8 @@ public class YzzzTest {
 
     //银行转证券
     @Test
-    void yhtoZq(){
+    @Order(1)
+    void yhtoZq() throws InterruptedException {
 
         String expect=config.zyb.expect.get(3);
 
@@ -54,7 +57,8 @@ public class YzzzTest {
 
     //证券转银行
     @Test
-    void zqtoYh(){
+    @Order(2)
+    void zqtoYh() throws InterruptedException {
 
         String expect=config.zyb.expect.get(3);
 
@@ -68,7 +72,8 @@ public class YzzzTest {
 
     //我的资金
     @Test
-    void wdZj(){
+    @Order(3)
+    void wdZj() throws InterruptedException {
 
         wdzjPage=tradePage.gotoYzzz().gotoWdzj();
         Boolean zj=wdzjPage.wdZj();
@@ -79,7 +84,8 @@ public class YzzzTest {
 
     //资金归集
     @Test
-    void zjGj(){
+    @Order(4)
+    void zjGj() throws InterruptedException {
 
         String expect=config.zyb.expect.get(4);
 
@@ -93,7 +99,8 @@ public class YzzzTest {
 
     //资金调拨
     @Test
-    void zjDb(){
+    @Order(5)
+    void zjDb() throws InterruptedException {
 
         String expect=config.zyb.expect.get(4);
 

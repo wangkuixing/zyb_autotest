@@ -8,17 +8,17 @@ public class CnjjPage extends BasePage {
     By cnsg=text("场内申购");
     By cnsh=text("场内赎回");
 
-    public CnjjrgPage gotoRg(){
+    public CnjjrgPage gotoRg() throws InterruptedException {
         find(cnrg).click();
         return new CnjjrgPage();
     }
 
-    public CnjjsgPage gotoSg(){
+    public CnjjsgPage gotoSg() throws InterruptedException {
         find(cnsg).click();
         return new CnjjsgPage();
     }
 
-    public CnjjshPage gotoSh(){
+    public CnjjshPage gotoSh() throws InterruptedException {
         find(cnsh).click();
         return new CnjjshPage();
     }

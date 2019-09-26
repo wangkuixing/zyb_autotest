@@ -17,7 +17,7 @@ public class GzcdPage extends BasePage {
 
     String message;
 
-    public GzcdPage gzCd() {
+    public GzcdPage gzCd() throws InterruptedException {
 
         if (find(none).getText().contains(cwsj)){
             message=cwsj;
@@ -40,7 +40,7 @@ public class GzcdPage extends BasePage {
         return message;
     }
 
-    public GzPage gotoGz(){
+    public GzPage gotoGz() throws InterruptedException {
 
         waituntil(back);
         find(back).click();

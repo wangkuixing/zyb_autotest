@@ -22,7 +22,7 @@ public class ZixuanPage extends BasePage{
 //        return this;
     }
 
-    public ZixuanPage removeAdd(String stockname){
+    public ZixuanPage removeAdd(String stockname) throws InterruptedException {
         //长按longPress
         WebElement added=find(text(stockname));
         PointOption po=new PointOption();

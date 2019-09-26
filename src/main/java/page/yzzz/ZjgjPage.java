@@ -14,7 +14,7 @@ public class ZjgjPage extends BasePage {
 
     String message;
 
-    public ZjgjPage zjGj(){
+    public ZjgjPage zjGj() throws InterruptedException {
 
         find(zjgj).click();
         find(zjgjqr).click();
@@ -28,7 +28,7 @@ public class ZjgjPage extends BasePage {
         return message;
     }
 
-    public YzzzPage gotoYzzz(){
+    public YzzzPage gotoYzzz() throws InterruptedException {
         find(back).click();
         return new YzzzPage();
     }

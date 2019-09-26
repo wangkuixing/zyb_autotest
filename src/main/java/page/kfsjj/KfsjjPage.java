@@ -16,54 +16,54 @@ public class KfsjjPage extends BasePage {
     By dtqx=text("定投取消");
     By back=By.className("android.widget.ImageView");
 
-    public JjsgPage gotoJjsg(){
+    public JjsgPage gotoJjsg() throws InterruptedException {
 
         find(jjsg).click();
         return new JjsgPage();
     }
 
-    public JjshPage gotoJjsh(){
+    public JjshPage gotoJjsh() throws InterruptedException {
 
         find(jjsh).click();
         return new JjshPage();
     }
 
-    public JjrgPage gotoJjrg(){
+    public JjrgPage gotoJjrg() throws InterruptedException {
 
         find(jjrg).click();
         return new JjrgPage();
     }
 
-    public JjcdPage gotoJjcd(){
+    public JjcdPage gotoJjcd() throws InterruptedException {
 
         find(cxwt).click();
         return new JjcdPage();
     }
-    public FhszPage gotoFhsz(){
+    public FhszPage gotoFhsz() throws InterruptedException {
 
         find(fhsz).click();
         return new FhszPage();
     }
 
-    public JjzhPage gotoJjzh(){
+    public JjzhPage gotoJjzh() throws InterruptedException {
 
         find(jjzh).click();
         return new JjzhPage();
     }
 
-    public JjdtPage gotoJjdt(){
+    public JjdtPage gotoJjdt() throws InterruptedException {
 
         find(dt).click();
         return new JjdtPage();
     }
 
-    public JjdtqxPage gotoJjdtqx(){
+    public JjdtqxPage gotoJjdtqx() throws InterruptedException {
 
         find(dtqx).click();
         return new JjdtqxPage();
     }
 
-    public TradePage gotoTrade(){
+    public TradePage gotoTrade() throws InterruptedException {
 
         find(back).click();
         return new TradePage();
