@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -55,6 +56,7 @@ public class ATest {
     }
 
     //买入A股000001,600000
+    @Description("买入A股000001,600000")
     @Order(1)
     @ParameterizedTest
     @MethodSource("Getyamlbuy")
@@ -69,6 +71,7 @@ public class ATest {
     }
 
     //卖出A股
+    @Description("卖出A股000882，600016")
     @Order(2)
     @ParameterizedTest
     @MethodSource("Getyamlsale")
@@ -85,6 +88,7 @@ public class ATest {
     }
 
     @Test
+    @Description("查询资金")
     @Order(3)
     void chaZijin() throws InterruptedException {
 
@@ -96,6 +100,7 @@ public class ATest {
     }
 
     @Test
+    @Description("我的持仓")
     @Order(4)
     void chiCang() throws InterruptedException {
 
@@ -106,8 +111,8 @@ public class ATest {
         assertTrue(chicang);
     }
 
-    //拆单买入A股000001
     @Test
+    @Description("拆单买入A股000001")
     @Order(5)
     void cdbuyA() throws InterruptedException {
 
@@ -127,8 +132,8 @@ public class ATest {
         assertThat(message2, containsString(expect));
     }
 
-    //拆单卖出A股000882
     @Test
+    @Description("拆单卖出A股000882")
     @Order(6)
     void cdsaleA(){
         //todo
@@ -139,8 +144,8 @@ public class ATest {
     //密码修改
     //todo
 
-    //新股申购
     @Test
+    @Description("新股申购")
     @Order(7)
     void xinguTest() throws InterruptedException {
 
@@ -154,6 +159,7 @@ public class ATest {
 
     //债券申购
     @Test
+    @Description("新股申购")
     @Order(8)
     void xinzhaiTest() throws InterruptedException {
 
