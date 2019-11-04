@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
@@ -37,8 +38,8 @@ public class HbjjTest {
         hbjjPage=tradePage.gotoHbjj();
     }
 
-    //货币基金申购
     @Test
+    @Description("货币基金申购519888")
     @Order(1)
     void hbjjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(13);
@@ -54,6 +55,7 @@ public class HbjjTest {
     }
 
     @Test
+    @Description("货币基金赎回519888")
     @Order(2)
     void hbjjSh() throws InterruptedException {
         String stkcode=config.zyb.stock.get(13);

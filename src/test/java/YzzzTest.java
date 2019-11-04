@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -39,8 +40,8 @@ public class YzzzTest {
         tradePage=buyPage.gotoTrade();
     }
 
-    //银行转证券
     @Test
+    @Description("银行转证券")
     @Order(1)
     void yhtoZq() throws InterruptedException {
 
@@ -54,9 +55,8 @@ public class YzzzTest {
         assertThat(message, containsString(expect));
     }
 
-
-    //证券转银行
     @Test
+    @Description("证券转银行")
     @Order(2)
     void zqtoYh() throws InterruptedException {
 
@@ -70,8 +70,8 @@ public class YzzzTest {
         assertThat(message, containsString(expect));
     }
 
-    //我的资金
     @Test
+    @Description("我的资金")
     @Order(3)
     void wdZj() throws InterruptedException {
 
@@ -82,8 +82,8 @@ public class YzzzTest {
         assertTrue(zj);
     }
 
-    //资金归集
     @Test
+    @Description("资金归集")
     @Order(4)
     void zjGj() throws InterruptedException {
 
@@ -97,8 +97,8 @@ public class YzzzTest {
         assertThat(message, containsString(expect));
     }
 
-    //资金调拨
     @Test
+    @Description("资金调拨")
     @Order(5)
     void zjDb() throws InterruptedException {
 

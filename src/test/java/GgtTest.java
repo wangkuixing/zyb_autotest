@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
@@ -36,8 +37,8 @@ public class GgtTest {
         tradePage=buyPage.gotoTrade();
     }
 
-    //港股通买入 -00001
     @Test
+    @Description("港股通买入00001")
     @Order(1)
     void ggtBuy() throws InterruptedException {
         String stkcode=config.zyb.stock.get(6);
@@ -56,8 +57,8 @@ public class GgtTest {
 
     }
 
-    //港股通卖出 - sh:01359 sz:01448
     @Test
+    @Description("港股通卖出 - sh:01359 sz:01448")
     @Order(2)
     void ggtSale() throws InterruptedException {
 
@@ -77,8 +78,8 @@ public class GgtTest {
         assertThat(message2, containsString(expect));
     }
 
-    //港股撤单,撤第一笔单
     @Test
+    @Description("港股撤单,撤第一笔单")
     @Order(3)
     void ggtChedan() throws InterruptedException {
 
@@ -92,8 +93,8 @@ public class GgtTest {
         assertThat(message, containsString(expect));
     }
 
-    //港股投票
     @Test
+    @Description("港股投票")
     @Order(4)
     void ggtVote() throws InterruptedException {
 
@@ -113,8 +114,8 @@ public class GgtTest {
 
     }
 
-    //港股公司行为
     @Test
+    @Description("港股公司行为")
     @Order(5)
     void ggtGsxw() throws InterruptedException {
 

@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
@@ -39,8 +40,8 @@ public class CnjjTest {
         cnjjPage=tradePage.gotoCnjj();
     }
 
-    //场内基金认购
     @Test
+    @Description("场内基金认购501001")
     @Order(1)
     void cnjjRg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(14);
@@ -55,8 +56,8 @@ public class CnjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //场内基金申购501001
     @Test
+    @Description("场内基金申购501001")
     @Order(2)
     void cnjjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(14);
@@ -71,8 +72,8 @@ public class CnjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //场内基金赎回150169
     @Test
+    @Description("场内基金赎回150169")
     @Order(3)
     void cnjjSh() throws InterruptedException {
         String stkcode=config.zyb.stock.get(15);

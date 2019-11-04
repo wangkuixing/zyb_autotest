@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -37,8 +38,8 @@ public class BTest {
     }
 
 
-    //买入B股
     @Order(1)
+    @Description("买入B股200058,900941")
     @ParameterizedTest
     @MethodSource("GetyamlbuyB")
     void BuyB(String stockcode, String expect) throws InterruptedException {
@@ -55,6 +56,7 @@ public class BTest {
 
     //卖出B股
     @Order(2)
+    @Description("卖出B股200017,900953")
     @ParameterizedTest
     @MethodSource("GetyamlsaleB")
     void SaleB(String stksaleB, String expect) throws InterruptedException {

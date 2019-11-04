@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -38,7 +39,7 @@ public class GzTest {
         tradePage=buyPage.gotoTrade();
     }
 
-    //股转限价买入430074,430005
+    @Description("股转限价买入430074,430005")
     @Order(1)
     @ParameterizedTest
     @MethodSource("getyamlBuygz")
@@ -53,7 +54,7 @@ public class GzTest {
 
     }
 
-    //股转限价卖出831529
+    @Description("股转限价卖出831529")
     @Test
     @Order(2)
     void saleGz() throws InterruptedException {
@@ -69,8 +70,8 @@ public class GzTest {
         assertThat(message, containsString(expect));
     }
 
-    //股转撤单
     @Test
+    @Description("股转撤单")
     @Order(3)
     void gzChedan() throws InterruptedException {
         String expect1=config.zyb.expect.get(0);

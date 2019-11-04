@@ -70,7 +70,6 @@ public class ATest {
         assertThat(message, containsString(expect));
     }
 
-    //卖出A股
     @Description("卖出A股000882，600016")
     @Order(2)
     @ParameterizedTest
@@ -157,9 +156,8 @@ public class ATest {
 
     }
 
-    //债券申购
     @Test
-    @Description("新股申购")
+    @Description("债券申购")
     @Order(8)
     void xinzhaiTest() throws InterruptedException {
 
@@ -171,8 +169,8 @@ public class ATest {
 
     }
 
-    //深市国债逆回购
     @Test
+    @Description("深市国债逆回购")
     @Order(9)
     void sznhgTest() throws InterruptedException {
 
@@ -187,8 +185,8 @@ public class ATest {
 
     }
 
-    //沪市国债逆回购
     @Test
+    @Description("沪市国债逆回购")
     @Order(10)
     void shnhgTest() throws InterruptedException {
 

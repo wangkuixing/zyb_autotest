@@ -1,4 +1,5 @@
 import driver.GlobalConfig;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import page.BuyPage;
 import page.LoginPage;
@@ -41,8 +42,8 @@ public class KfsjjTest {
         kfsjjPage=tradePage.gotoKfsjj();
     }
 
-    //基金申购000562
     @Test
+    @Description("基金申购000562")
     @Order(1)
     void jjSg() throws InterruptedException {
         String stkcode=config.zyb.stock.get(11);
@@ -57,8 +58,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金赎回200016
     @Test
+    @Description("基金赎回200016")
     @Order(2)
     void jjSh() throws InterruptedException {
 
@@ -74,8 +75,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金认购000561
     @Test
+    @Description("基金认购000561")
     @Order(3)
     void jjRg() throws InterruptedException {
 
@@ -91,8 +92,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金撤单 撤第一笔单，无委托返回查无数据
     @Test
+    @Description("基金撤单 撤第一笔单，无委托返回查无数据")
     @Order(4)
     void jjCd() throws InterruptedException {
 
@@ -106,8 +107,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金分红设置：000562现金
     @Test
+    @Description("基金分红设置：000562现金")
     @Order(5)
     void fhSz() throws InterruptedException {
 
@@ -121,8 +122,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金转换200015-000562
     @Test
+    @Description("基金转换200015-000562")
     @Order(6)
     void jjZh() throws InterruptedException {
 
@@ -138,8 +139,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金定投000562
     @Test
+    @Description("基金定投000562")
     @Order(7)
     void jjDt() throws InterruptedException {
 
@@ -155,8 +156,8 @@ public class KfsjjTest {
         assertThat(message, containsString(expect));
     }
 
-    //基金定投取消000562
     @Test
+    @Description("基金定投取消000562")
     @Order(8)
     void jjDtqx() throws InterruptedException {
 
