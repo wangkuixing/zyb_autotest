@@ -20,7 +20,6 @@ public class SalePage extends BasePage{
         find(stockedit).sendKeys(stockcode);
         //find(this.stockamount).sendKeys(stockamount);
         //等待10s取股东号，证券信息
-        Thread.sleep(10000);
         find(this.stockamount).click();
         find(ljmc).click();
         find(mc).click();

@@ -5,7 +5,7 @@ import page.BasePage;
 
 public class ZjzcPage extends BasePage {
 
-    By zzje=By.xpath("//android.view.View[6]/android.view.View[2]/android.widget.EditText");
+    By zzje=By.xpath("//android.view.View[6]/android.view.View[3]/android.widget.EditText");
     By yhmm=By.xpath("//android.view.View[7]/android.view.View[2]/android.widget.EditText");
     By ljzz=text("立即转账");
     By queding=text("确定");

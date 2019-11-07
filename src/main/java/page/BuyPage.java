@@ -20,8 +20,6 @@ public class BuyPage extends BasePage{
     public BuyPage buyTest(String stockcode) throws InterruptedException {
 
         find(stockedit).sendKeys(stockcode);
-        //等待10s取股东号，证券信息
-        Thread.sleep(10000);
         find(buyamount).click();
         find(ljmr).click();
         find(mr).click();
@@ -38,11 +36,11 @@ public class BuyPage extends BasePage{
     public TradePage gotoTrade() throws InterruptedException {
 
         waituntil(back);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         find(back).click();
 //        Driver.getCurrentDriver().findElements(back).get(0).click();
         return new TradePage();

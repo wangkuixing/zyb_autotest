@@ -102,9 +102,10 @@ public class YzzzTest {
     @Order(5)
     void zjDb() throws InterruptedException {
 
-        String expect=config.zyb.expect.get(4);
+        String expect=config.zyb.expect.get(11);
 
         zjdbPage=tradePage.gotoYzzz().gotoZjdb();
+        Thread.sleep(5000);
         zjdbPage.zjDb();
         String message=zjdbPage.getMessage();
         zjdbPage.gotoYzzz().gotoTrade();
