@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
     public static WebElement find(By locator) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         try {
             return Driver.getCurrentDriver().findElement(locator);
         }catch(Exception e){

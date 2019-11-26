@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class GzTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -24,7 +23,6 @@ public class GzTest {
     static XjmrPage xjmrPage;
     static XjmcPage xjmcPage;
     static GzcdPage gzcdPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -44,7 +42,6 @@ public class GzTest {
     @ParameterizedTest
     @MethodSource("getyamlBuygz")
     void buyGz(String stkcode, String expect) throws InterruptedException {
-
         xjmrPage=tradePage.gotoGz().gotoXjmr();
         xjmrPage.buyGz(stkcode);
         String message=xjmrPage.getMessage();
@@ -58,7 +55,6 @@ public class GzTest {
     @Test
     @Order(2)
     void saleGz() throws InterruptedException {
-
         String stkcode=config.zyb.stksale.get(2);
         String expect=config.zyb.expect.get(2);
 

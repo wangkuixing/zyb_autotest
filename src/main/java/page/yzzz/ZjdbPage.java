@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import page.BasePage;
 
 public class ZjdbPage extends BasePage {
-
     By zrzh=By.xpath("//android.view.View[4]/android.view.View[2]/android.widget.Spinner");
     By mscg=text("（1200106828）民生存管");
     By zzje=By.className("android.widget.EditText");
@@ -12,12 +11,9 @@ public class ZjdbPage extends BasePage {
     By queding=text("确定");
     By queding2=By.xpath("//android.widget.Button[@text='确定']");
     By back=By.className("android.widget.ImageView");
-
-
     String message;
 
     public ZjdbPage zjDb() throws InterruptedException {
-
         find(zrzh).click();
         find(mscg).click();
         find(zzje).sendKeys("333");
@@ -29,7 +25,6 @@ public class ZjdbPage extends BasePage {
     }
 
     public String getMessage(){
-
         return message;
     }
 

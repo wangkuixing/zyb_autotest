@@ -3,7 +3,6 @@ package driver;
 import java.util.ArrayList;
 
 public class ZybConfig {
-
     public String username;
     public String userb;
     public String useryzzz;

@@ -3,7 +3,6 @@ package page;
 import org.openqa.selenium.By;
 
 public class MorePage extends BasePage{
-
     By back=By.className("android.widget.ImageView");
 
     public CdbuyPage gotocdBuy() throws InterruptedException {

@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 
 public class VoteggPage extends BasePage {
-
     By hgt=text("沪港通公司投票申报");
     By sgt=text("深港通公司投票申报");
     String none="暂无可选议案编号";
@@ -19,16 +18,12 @@ public class VoteggPage extends BasePage {
     By queding=text("确定");
     By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
     By back=By.className("android.widget.ImageView");
-
     String message1;
     String message2;
 
     public VoteggPage voteHgt() throws InterruptedException {
-
         find(hgt).click();
-        //显式等待议案编号
-        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(yabh));
+        waituntil(yabh);
         if (find(yabh).getText().contains(none)){
             find(back).click();
             message1=none;
@@ -46,11 +41,8 @@ public class VoteggPage extends BasePage {
     }
 
     public VoteggPage voteSgt() throws InterruptedException {
-
         find(sgt).click();
-        //显式等待议案编号
-        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(yabh));
+        waituntil(yabh);
         if (find(yabh).getText().contains(none)){
             find(back).click();
             message2=none;

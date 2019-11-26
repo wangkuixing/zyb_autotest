@@ -15,7 +15,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class YzzzTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -25,7 +24,6 @@ public class YzzzTest {
     static WdzjPage wdzjPage;
     static ZjgjPage zjgjPage;
     static ZjdbPage zjdbPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -44,7 +42,6 @@ public class YzzzTest {
     @Description("银行转证券")
     @Order(1)
     void yhtoZq() throws InterruptedException {
-
         String expect=config.zyb.expect.get(3);
 
         zjzrPage=tradePage.gotoYzzz().gotoZjzr();
@@ -59,7 +56,6 @@ public class YzzzTest {
     @Description("证券转银行")
     @Order(2)
     void zqtoYh() throws InterruptedException {
-
         String expect=config.zyb.expect.get(3);
 
         zjzcPage=tradePage.gotoYzzz().gotoZjzc();
@@ -74,7 +70,6 @@ public class YzzzTest {
     @Description("我的资金")
     @Order(3)
     void wdZj() throws InterruptedException {
-
         wdzjPage=tradePage.gotoYzzz().gotoWdzj();
         Boolean zj=wdzjPage.wdZj();
         wdzjPage.gotoYzzz().gotoTrade();
@@ -86,7 +81,6 @@ public class YzzzTest {
     @Description("资金归集")
     @Order(4)
     void zjGj() throws InterruptedException {
-
         String expect=config.zyb.expect.get(4);
 
         zjgjPage=tradePage.gotoYzzz().gotoZjgj();
@@ -101,7 +95,6 @@ public class YzzzTest {
     @Description("资金调拨")
     @Order(5)
     void zjDb() throws InterruptedException {
-
         String expect=config.zyb.expect.get(11);
 
         zjdbPage=tradePage.gotoYzzz().gotoZjdb();

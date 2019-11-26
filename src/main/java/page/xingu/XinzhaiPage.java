@@ -27,18 +27,14 @@ public class XinzhaiPage extends BasePage {
             }catch (NoSuchElementException e){}
 
             By qr=text("确认");
-            WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-            wait.until(ExpectedConditions.presenceOfElementLocated(qr));
+            waituntil(qr);
             find(qr).click();
-
             return this;
         }
     }
 
     public YjdxPage gotoYjdx() throws InterruptedException {
-
         By back=By.className("android.widget.ImageView");
-
         find(back).click();
         return new YjdxPage();
     }

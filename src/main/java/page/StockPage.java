@@ -8,14 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class StockPage extends BasePage{
-
     By fanhui=By.xpath("//android.widget.ImageView[@instance=0]");
     //uiautomator2 无法用上面的instance=0定位，只有用下面这个（定位很慢）
     //By fanhui=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
 
     public StockPage addZixuan() throws InterruptedException {
-        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(text("加自选")));
+        waituntil(text("加自选"));
         find(By.xpath("//android.widget.TextView[@text='加自选']")).click();
         return this;
     }

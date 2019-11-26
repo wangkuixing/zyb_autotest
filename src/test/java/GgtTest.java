@@ -12,7 +12,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class GgtTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -22,7 +21,6 @@ public class GgtTest {
     static GgchedanPage ggchedanPage;
     static VoteggPage voteggPage;
     static GsxwPage gsxwPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -61,7 +59,6 @@ public class GgtTest {
     @Description("港股通卖出 - sh:01359 sz:01448")
     @Order(2)
     void ggtSale() throws InterruptedException {
-
         String stkcodesh=config.zyb.stock.get(7);
         String stkcodesz=config.zyb.stock.get(8);
         String expect=config.zyb.expect.get(2);
@@ -82,7 +79,6 @@ public class GgtTest {
     @Description("港股撤单,撤第一笔单")
     @Order(3)
     void ggtChedan() throws InterruptedException {
-
         String expect=config.zyb.expect.get(2);
 
         ggchedanPage=tradePage.gotoGgt().gotoChedan();
@@ -97,7 +93,6 @@ public class GgtTest {
     @Description("港股投票")
     @Order(4)
     void ggtVote() throws InterruptedException {
-
         String expect1=config.zyb.expect.get(5);
         String expect2=config.zyb.expect.get(6);
 
@@ -118,7 +113,6 @@ public class GgtTest {
     @Description("港股公司行为")
     @Order(5)
     void ggtGsxw() throws InterruptedException {
-
         String expect1=config.zyb.expect.get(5);
         String expect2=config.zyb.expect.get(7);
 

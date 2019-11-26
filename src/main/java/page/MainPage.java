@@ -28,16 +28,12 @@ public class MainPage extends BasePage{
     }
 
     public HqPage gotoHq() throws InterruptedException {
-//        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-//        wait.until(ExpectedConditions.presenceOfElementLocated(hq));
-
         find(hq).click();
         return new HqPage();
 
     }
 
     public TradePage gotoTrade() throws InterruptedException {
-
         find(trade).click();
         return new TradePage();
     }

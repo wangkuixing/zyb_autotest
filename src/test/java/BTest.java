@@ -16,13 +16,11 @@ import java.util.stream.Stream;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
     static BuyPage buyPage;
     static SalePage salePage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -43,8 +41,6 @@ public class BTest {
     @ParameterizedTest
     @MethodSource("GetyamlbuyB")
     void BuyB(String stockcode, String expect) throws InterruptedException {
-
-
         buyPage=tradePage.gotoBuy();
         buyPage.buyTest(stockcode);
         String message=buyPage.getMessage();
@@ -60,7 +56,6 @@ public class BTest {
     @ParameterizedTest
     @MethodSource("GetyamlsaleB")
     void SaleB(String stksaleB, String expect) throws InterruptedException {
-
         String stkamt=config.zyb.stkamt;
 
         salePage=tradePage.gotoSale();
@@ -72,13 +67,11 @@ public class BTest {
     }
 
     static Stream<Arguments> GetyamlbuyB() {
-
         return Stream.of(Arguments.of(config.zyb.stock.get(2),config.zyb.expect.get(0)),
                 Arguments.of(config.zyb.stock.get(3),config.zyb.expect.get(1)));
     }
 
     static Stream<Arguments> GetyamlsaleB() {
-
         return Stream.of(Arguments.of(config.zyb.stock.get(4),config.zyb.expect.get(0)),
                 Arguments.of(config.zyb.stock.get(5),config.zyb.expect.get(1)));
     }

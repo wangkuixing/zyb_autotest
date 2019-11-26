@@ -8,17 +8,14 @@ import page.BasePage;
 import java.util.ArrayList;
 
 public class GzcdPage extends BasePage {
-
     By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
     By none=By.xpath("//android.webkit.WebView/android.view.View[1]");
     String cwsj="查无数据";
     By queding=text("确定");
     By back=By.className("android.widget.ImageView");
-
     String message;
 
     public GzcdPage gzCd() throws InterruptedException {
-
         if (find(none).getText().contains(cwsj)){
             message=cwsj;
         }
@@ -41,10 +38,8 @@ public class GzcdPage extends BasePage {
     }
 
     public GzPage gotoGz() throws InterruptedException {
-
         waituntil(back);
         find(back).click();
-
         return new GzPage();
     }
 }

@@ -12,7 +12,6 @@ public class Driver {
 
     private static AndroidDriver<WebElement> driver;
     public static void start(){
-
         DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
 
         GlobalConfig config= GlobalConfig.load("/data/globalConfig.yaml");
@@ -27,7 +26,6 @@ public class Driver {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
         driver = new AndroidDriver<>(remoteurl, desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(config.appium.wait, TimeUnit.SECONDS);
     }

@@ -5,11 +5,9 @@ import org.openqa.selenium.NoSuchElementException;
 import page.BasePage;
 
 public class WdzjPage extends BasePage {
-
     By back=By.className("android.widget.ImageView");
 
     public Boolean wdZj() throws InterruptedException {
-
         try{
             find(text("人民币"));
             find(text("余额"));
@@ -21,7 +19,6 @@ public class WdzjPage extends BasePage {
     }
 
     public YzzzPage gotoYzzz() throws InterruptedException {
-
         find(back).click();
         return new YzzzPage();
     }

@@ -25,7 +25,6 @@ import java.util.stream.Stream;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class ATest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -40,7 +39,6 @@ public class ATest {
     static XinzhaiPage xinzhaiPage;
     static SznhgPage sznhgPage;
     static ShnhgPage shnhgPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -61,7 +59,6 @@ public class ATest {
     @ParameterizedTest
     @MethodSource("Getyamlbuy")
     void buyA(String stockcode, String expect) throws InterruptedException {
-
         buyPage=tradePage.gotoBuy();
         buyPage.buyTest(stockcode);
         String message=buyPage.getMessage();
@@ -75,14 +72,12 @@ public class ATest {
     @ParameterizedTest
     @MethodSource("Getyamlsale")
     void saleA(String stksale, String expect) throws InterruptedException {
-
         String stkamt=config.zyb.stkamt;
 
         salePage=tradePage.gotoSale();
         salePage.SaleTest(stksale, stkamt);
         String message=salePage.getMessage();
         salePage.gotoTrade();
-
         assertThat(message, containsString(expect));
     }
 
@@ -90,7 +85,6 @@ public class ATest {
     @Description("查询资金")
     @Order(3)
     void chaZijin() throws InterruptedException {
-
         chaxunPage=tradePage.gotoChaxun();
         Boolean cha=chaxunPage.chaxunTest();
         chaxunPage.gotoTrade();
@@ -102,7 +96,6 @@ public class ATest {
     @Description("我的持仓")
     @Order(4)
     void chiCang() throws InterruptedException {
-
         chicangPage=tradePage.gotoChicang();
         Boolean chicang=chicangPage.chicangTest();
         chicangPage.gotoTrade();
@@ -114,17 +107,14 @@ public class ATest {
     @Description("拆单买入A股000001")
     @Order(5)
     void cdbuyA() throws InterruptedException {
-
         String stockcode=config.zyb.stock.get(0);
         String expect=config.zyb.expect.get(2);
 
         cdbuyPage=tradePage.gotoMore().gotocdBuy();
         cdbuyPage.jfTest(stockcode);
         String message1=cdbuyPage.getMessage1();
-
         cdbuyPage.randomTest(stockcode);
         String message2=cdbuyPage.getMessage2();
-
         cdbuyPage.gotoMore().gotoTrade();
 
         assertThat(message1, containsString(expect));
@@ -147,7 +137,6 @@ public class ATest {
     @Description("新股申购")
     @Order(7)
     void xinguTest() throws InterruptedException {
-
         tradePage.gotoYjdx()
                 .gotoXgsg()
                 .xinguTest()
@@ -160,7 +149,6 @@ public class ATest {
     @Description("债券申购")
     @Order(8)
     void xinzhaiTest() throws InterruptedException {
-
         tradePage.gotoYjdx()
                 .gotoXinzhai()
                 .xinzhaiTest()
@@ -173,7 +161,6 @@ public class ATest {
     @Description("深市国债逆回购")
     @Order(9)
     void sznhgTest() throws InterruptedException {
-
         sznhgPage=tradePage.gotoNhg().gotoSz();
         sznhgPage.weituo1318xx();
         String message1=sznhgPage.getMessage1();
@@ -189,7 +176,6 @@ public class ATest {
     @Description("沪市国债逆回购")
     @Order(10)
     void shnhgTest() throws InterruptedException {
-
         shnhgPage=tradePage.gotoNhg().gotoSh();
         shnhgPage.weituo204xxx();
         String message1=shnhgPage.getMessage1();
@@ -251,13 +237,11 @@ public class ATest {
 //    }
 
     static Stream<Arguments> Getyamlbuy() {
-
         return Stream.of(Arguments.of(config.zyb.stock.get(0),config.zyb.expect.get(0)),
                 Arguments.of(config.zyb.stock.get(1),config.zyb.expect.get(1)));
     }
 
     static Stream<Arguments> Getyamlsale() {
-
         return Stream.of(Arguments.of(config.zyb.stksale.get(0),config.zyb.expect.get(0)),
                 Arguments.of(config.zyb.stksale.get(1),config.zyb.expect.get(1)));
     }

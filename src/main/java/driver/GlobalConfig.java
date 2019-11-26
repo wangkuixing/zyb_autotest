@@ -10,7 +10,6 @@ public class GlobalConfig {
     public ZybConfig zyb;
 
     public static GlobalConfig load(String path){
-
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         try {
             GlobalConfig config = mapper.readValue(GlobalConfig.class.getResource(path), GlobalConfig.class);

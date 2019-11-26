@@ -7,27 +7,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.BasePage;
 
 public class GsxwPage extends BasePage {
-
     By hgt=text("沪港通公司行为申报");
     By sgt=text("深港通公司行为申报");
     By xwdm=By.xpath("//android.view.View[6]/android.view.View[2]/android.widget.Spinner");
     String none="无可选行为代码";
     By sbsl=By.xpath("//android.view.View[7]/android.view.View[2]/android.widget.EditText");
-
     By sb=By.xpath("//android.view.View[@text='申报']");
     By queding=text("确定");
     By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
     By back=By.className("android.widget.ImageView");
-
     String message1;
     String message2;
 
     public GsxwPage gsxwHgt() throws InterruptedException {
-
         find(hgt).click();
-        //显式等待行为代码
-        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(xwdm));
+        waituntil(xwdm);
         if (find(xwdm).getText().contains(none)){
             find(back).click();
             message1=none;
@@ -46,11 +40,8 @@ public class GsxwPage extends BasePage {
 
 
     public GsxwPage gsxwSgt() throws InterruptedException {
-
         find(sgt).click();
-        //显式等待行为代码
-        WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(xwdm));
+        waituntil(xwdm);
         if (find(xwdm).getText().contains(none)){
             find(back).click();
             message2=none;

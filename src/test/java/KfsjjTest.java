@@ -12,7 +12,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class KfsjjTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -26,7 +25,6 @@ public class KfsjjTest {
     static JjzhPage jjzhPage;
     static JjdtPage jjdtPage;
     static JjdtqxPage jjdtqxPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll
@@ -62,7 +60,6 @@ public class KfsjjTest {
     @Description("基金赎回200016")
     @Order(2)
     void jjSh() throws InterruptedException {
-
         String stkcode=config.zyb.stksale.get(3);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);
@@ -79,7 +76,6 @@ public class KfsjjTest {
     @Description("基金认购000561")
     @Order(3)
     void jjRg() throws InterruptedException {
-
         String stkcode=config.zyb.stock.get(12);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);
@@ -96,7 +92,6 @@ public class KfsjjTest {
     @Description("基金撤单 撤第一笔单，无委托返回查无数据")
     @Order(4)
     void jjCd() throws InterruptedException {
-
         String expect=config.zyb.expect.get(0);
 
         jjcdPage=kfsjjPage.gotoJjcd();
@@ -111,7 +106,6 @@ public class KfsjjTest {
     @Description("基金分红设置：000562现金")
     @Order(5)
     void fhSz() throws InterruptedException {
-
         String expect=config.zyb.expect.get(9);
 
         fhszPage=kfsjjPage.gotoFhsz();
@@ -126,7 +120,6 @@ public class KfsjjTest {
     @Description("基金转换200015-000562")
     @Order(6)
     void jjZh() throws InterruptedException {
-
         String stkcode=config.zyb.stock.get(11);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);
@@ -143,7 +136,6 @@ public class KfsjjTest {
     @Description("基金定投000562")
     @Order(7)
     void jjDt() throws InterruptedException {
-
         String stkcode=config.zyb.stock.get(11);
         String amount=config.zyb.stkamt;
         String expect=config.zyb.expect.get(9);
@@ -160,7 +152,6 @@ public class KfsjjTest {
     @Description("基金定投取消000562")
     @Order(8)
     void jjDtqx() throws InterruptedException {
-
         String expect1=config.zyb.expect.get(9);
         String expect2=config.zyb.expect.get(10);
 

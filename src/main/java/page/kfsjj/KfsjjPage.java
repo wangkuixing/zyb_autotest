@@ -5,7 +5,6 @@ import page.BasePage;
 import page.TradePage;
 
 public class KfsjjPage extends BasePage {
-
     By jjsg=text("基金申购");
     By jjsh=text("基金赎回");
     By jjrg=text("基金认购");
@@ -17,54 +16,45 @@ public class KfsjjPage extends BasePage {
     By back=By.className("android.widget.ImageView");
 
     public JjsgPage gotoJjsg() throws InterruptedException {
-
         find(jjsg).click();
         return new JjsgPage();
     }
 
     public JjshPage gotoJjsh() throws InterruptedException {
-
         find(jjsh).click();
         return new JjshPage();
     }
 
     public JjrgPage gotoJjrg() throws InterruptedException {
-
         find(jjrg).click();
         return new JjrgPage();
     }
 
     public JjcdPage gotoJjcd() throws InterruptedException {
-
         find(cxwt).click();
         return new JjcdPage();
     }
     public FhszPage gotoFhsz() throws InterruptedException {
-
         find(fhsz).click();
         return new FhszPage();
     }
 
     public JjzhPage gotoJjzh() throws InterruptedException {
-
         find(jjzh).click();
         return new JjzhPage();
     }
 
     public JjdtPage gotoJjdt() throws InterruptedException {
-
         find(dt).click();
         return new JjdtPage();
     }
 
     public JjdtqxPage gotoJjdtqx() throws InterruptedException {
-
         find(dtqx).click();
         return new JjdtqxPage();
     }
 
     public TradePage gotoTrade() throws InterruptedException {
-
         find(back).click();
         return new TradePage();
     }

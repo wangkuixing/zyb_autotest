@@ -14,7 +14,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class HbjjTest {
-
     static MainPage mainPage;
     static TradePage tradePage;
     static LoginPage loginPage;
@@ -22,7 +21,6 @@ public class HbjjTest {
     static HbjjPage hbjjPage;
     static HbjjsgPage hbjjsgPage;
     static HbjjshPage hbjjshPage;
-
     static GlobalConfig config=GlobalConfig.load("/data/globalConfig.yaml");
 
     @BeforeAll

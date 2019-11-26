@@ -5,7 +5,6 @@ import page.BasePage;
 import page.TradePage;
 
 public class XjmcPage extends BasePage {
-
     By stockedit=By.id("tzt_trade_edit_stockcode");
     By buyamount=By.id("tzt_trade_linear_count_addcount_icon");
     By xjmc=text("限价卖出");
@@ -13,11 +12,9 @@ public class XjmcPage extends BasePage {
     By msg=By.xpath("//android.widget.LinearLayout[2]/android.widget.TextView");
     By queding=text("确定");
     By back=By.xpath("//android.widget.Button[@text!='限价卖出']");
-
     String message;
 
     public XjmcPage saleGz(String stockcode) throws InterruptedException {
-
         find(stockedit).sendKeys(stockcode);
         find(buyamount).click();
         find(xjmc).click();
@@ -33,7 +30,6 @@ public class XjmcPage extends BasePage {
     }
 
     public GzPage gotoGz() throws InterruptedException {
-
         waituntil(back);
         find(back).click();
         return new GzPage();
