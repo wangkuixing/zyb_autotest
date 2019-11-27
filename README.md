@@ -14,5 +14,10 @@
 * gitlab:代码仓库（私有化部署）
 
 ## 项目结构
+* main/driver: driver全局配置，数据驱动读取yaml文件
+* page: pageObject页面
+* test/java: testCase
 
-* 
+## 运行
+
+代码上传至gitlab，jenkins中配置maven project，可实现按需定时执行project，执行完成后生成allure report
