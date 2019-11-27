@@ -37,6 +37,11 @@ public class GzTest {
         tradePage=buyPage.gotoTrade();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Description("股转限价买入430074,430005")
     @Order(1)
     @ParameterizedTest

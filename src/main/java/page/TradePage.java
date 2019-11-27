@@ -71,31 +71,36 @@ public class TradePage extends BasePage {
 
     public GgtPage gotoGgt() throws InterruptedException {
         swipeControl();
-        find(By.xpath("//android.view.View[@text='港股通交易']")).click();
+        tapByCoordinate(220, 796);
+//        find(By.xpath("//android.view.View[@text='港股通交易']")).click();
         return new GgtPage();
     }
 
     public GzPage gotoGz() throws InterruptedException {
         swipeControl();
-        find(By.xpath("//android.view.View[@text='股转业务']")).click();
+        tapByCoordinate(220, 938);
+//        find(By.xpath("//android.view.View[@text='股转业务']")).click();
         return new GzPage();
     }
 
     public KfsjjPage gotoKfsjj() throws InterruptedException {
         swipeControl();
-        find(By.xpath("//android.view.View[@text='开放式基金']")).click();
+        tapByCoordinate(220, 1126);
+//        find(By.xpath("//android.view.View[@text='开放式基金']")).click();
         return new KfsjjPage();
     }
 
     public HbjjPage gotoHbjj() throws InterruptedException {
         swipeControl();
-        find(By.xpath("//android.view.View[@text='实时货币基金']")).click();
+        tapByCoordinate(220, 1272);
+//        find(By.xpath("//android.view.View[@text='实时货币基金']")).click();
         return new HbjjPage();
     }
 
     public CnjjPage gotoCnjj() throws InterruptedException {
         swipeControl();
-        find(By.xpath("//android.view.View[@text='场内基金']")).click();
+        tapByCoordinate(220, 1418);
+//        find(By.xpath("//android.view.View[@text='场内基金']")).click();
         return new CnjjPage();
     }
 
@@ -106,7 +111,8 @@ public class TradePage extends BasePage {
     }
 
     //上滑页面从3/4位置滑动到1/4
-    public TradePage swipeControl(){
+    public TradePage swipeControl() throws InterruptedException {
+        Thread.sleep(5000);
         int width=Driver.getCurrentDriver().manage().window().getSize().width;
         int height=Driver.getCurrentDriver().manage().window().getSize().height;
         int y1=height*3/4;
@@ -123,6 +129,14 @@ public class TradePage extends BasePage {
         TouchAction taction=new TouchAction(Driver.getCurrentDriver());
         taction.press(po1).waitAction(wait).moveTo(po2).release().perform();
         return new TradePage();
+    }
 
+    public void tapByCoordinate(int x, int y) throws InterruptedException {
+        Thread.sleep(5000);
+        PointOption po=new PointOption();
+        po.withCoordinates(x, y);
+
+        TouchAction action=new TouchAction(Driver.getCurrentDriver());
+        action.tap(po).perform().release();
     }
 }

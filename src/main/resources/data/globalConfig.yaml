@@ -11,6 +11,7 @@ appium:
     autoGrantPermissions: true
     noReset: true
     automationName: UiAutomator2
+    chromedriverExecutableDir: /Users/kevinwang/chromedriver/chromedriver
 zyb:
   username: 1100004676
   userb: 1100001397

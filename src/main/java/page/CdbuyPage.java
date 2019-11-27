@@ -10,7 +10,7 @@ public class CdbuyPage extends BasePage{
     By randombtn=By.id("randomradiobutton");
     By randomedit=By.id("random_edit");
     By mr=text("立即买入");
-    By msg=By.xpath("//android.widget.TextView[contains(@text, '委托已提交')]");
+    By msg=By.xpath("(//*/android.widget.TextView)[2]");
     By queding=text("确定");
     By back=By.xpath("//android.widget.Button[@text!='立即拆单']");
     String message1;

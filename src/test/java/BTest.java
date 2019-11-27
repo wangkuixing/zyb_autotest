@@ -1,9 +1,6 @@
 import driver.GlobalConfig;
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,6 +32,10 @@ public class BTest {
         tradePage=buyPage.gotoTrade();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
 
     @Order(1)
     @Description("买入B股200058,900941")

@@ -36,6 +36,11 @@ public class HbjjTest {
         hbjjPage=tradePage.gotoHbjj();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Test
     @Description("货币基金申购519888")
     @Order(1)

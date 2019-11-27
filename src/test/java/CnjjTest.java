@@ -38,6 +38,11 @@ public class CnjjTest {
         cnjjPage=tradePage.gotoCnjj();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Test
     @Description("场内基金认购501001")
     @Order(1)

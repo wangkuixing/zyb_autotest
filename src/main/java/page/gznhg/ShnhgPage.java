@@ -7,7 +7,8 @@ public class ShnhgPage extends BasePage {
     By amount=By.id("tzt_trade_linear_count_addcount_icon");
     By ljmc=text("立即卖出");
     By mc=text("卖出");
-    By msg=By.xpath("//android.widget.TextView[contains(@text, '委托')]");
+//    By msg=By.xpath("//android.widget.TextView[contains(@text, '委托')]");
+    By msg=By.xpath("(//*/android.widget.TextView)[2]");
     By queding=text("确定");
     By back=By.xpath("//android.widget.Button[@text!='立即卖出']");
     By stkcode=By.id("com.ytsc:id/tzt_trade_edit_stockcode");

@@ -1,14 +1,12 @@
 import driver.GlobalConfig;
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.BeforeAll;
+import org.aspectj.lang.annotation.After;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -53,7 +51,11 @@ public class ATest {
         tradePage=buyPage.gotoTrade();
     }
 
-    //买入A股000001,600000
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Description("买入A股000001,600000")
     @Order(1)
     @ParameterizedTest

@@ -1,6 +1,7 @@
 package page;
 
 import driver.Driver;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -50,5 +51,4 @@ public class BasePage {
         WebDriverWait wait=new WebDriverWait(Driver.getCurrentDriver(),10);
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
-
 }

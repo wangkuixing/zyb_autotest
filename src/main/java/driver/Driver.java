@@ -30,6 +30,10 @@ public class Driver {
         driver.manage().timeouts().implicitlyWait(config.appium.wait, TimeUnit.SECONDS);
     }
 
+    public static void stop(){
+        driver.quit();
+    }
+
     public static AndroidDriver<WebElement> getCurrentDriver(){
         return driver;
     }

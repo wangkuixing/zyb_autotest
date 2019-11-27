@@ -17,6 +17,10 @@ public class MainPage extends BasePage{
         return new MainPage();
     }
 
+    public static void stop(){
+        Driver.stop();
+    }
+
     public MainPage gotoMyself(){
         try {
             Thread.sleep(10000);

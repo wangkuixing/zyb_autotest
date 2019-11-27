@@ -40,6 +40,11 @@ public class KfsjjTest {
         kfsjjPage=tradePage.gotoKfsjj();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Test
     @Description("基金申购000562")
     @Order(1)

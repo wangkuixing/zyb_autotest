@@ -38,6 +38,11 @@ public class YzzzTest {
         tradePage=buyPage.gotoTrade();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Test
     @Description("银行转证券")
     @Order(1)

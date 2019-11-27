@@ -1,8 +1,5 @@
 import driver.GlobalConfig;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -27,6 +24,11 @@ public class SearchTest {
     static void beforeALL() throws InterruptedException {
         mainPage=MainPage.start();
         hqPage =mainPage.gotoHq();
+    }
+
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
     }
 
     //配置驱动：将yaml文件实例化对象

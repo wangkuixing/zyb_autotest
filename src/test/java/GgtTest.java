@@ -35,6 +35,11 @@ public class GgtTest {
         tradePage=buyPage.gotoTrade();
     }
 
+    @AfterAll
+    static void afterALL(){
+        mainPage.stop();
+    }
+
     @Test
     @Description("港股通买入00001")
     @Order(1)
