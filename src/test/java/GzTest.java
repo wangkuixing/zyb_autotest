@@ -56,7 +56,7 @@ public class GzTest {
 
     }
 
-    @Description("股转限价卖出831529")
+    @Description("股转限价卖出430002")
     @Test
     @Order(2)
     void saleGz() throws InterruptedException {

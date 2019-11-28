@@ -110,13 +110,13 @@ public class TradePage extends BasePage {
         return new TradePage();
     }
 
-    //上滑页面从3/4位置滑动到1/4
+    //上滑页面从4/5位置滑动到1/5
     public TradePage swipeControl() throws InterruptedException {
         Thread.sleep(5000);
         int width=Driver.getCurrentDriver().manage().window().getSize().width;
         int height=Driver.getCurrentDriver().manage().window().getSize().height;
-        int y1=height*3/4;
-        int y2=height*1/4;
+        int y1=height*4/5;
+        int y2=height*1/5;
         PointOption po1=new PointOption();
         po1.withCoordinates(width/2,y1);
         PointOption po2=new PointOption();
