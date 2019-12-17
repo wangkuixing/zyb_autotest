@@ -1,9 +1,6 @@
-# 移动端UI自动化测试
+# 证券交易APP UI自动化测试
 
 这个是android项目，IOS项目见zyb_ios
-刚开始做写代码的时候，准备android和IOS重用同一套框架代码，后来考虑到Android和IOS界面布局很多不一样，
-也跟许多朋友交流过，两套混在一起维护困难，所以考虑分开做。
-（appium里有@AndroiodFindBy  @IosFindBy，有兴趣的同学可以尝试）
 
 ## 使用工具
 
@@ -20,4 +17,4 @@
 
 ## 运行
 
-代码上传至gitlab，jenkins中配置maven project，可实现按需定时执行project，执行完成后生成allure report
+代码上传至gitlab，通过jenkins作业化执行，执行完成后生成allure report
